@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
   <div class="form-container">
     <h1>Book Appointment with Snehansh</h1>
-    <form>
+    <form id="appointmentForm">
       <label for="name">Name:</label>
       <input type="text" id="name" required>
 
@@ -29,14 +29,31 @@
       <label for="message">Message / Query:</label>
       <textarea id="message" rows="3"></textarea>
 
-      <!-- ✅ Direct WhatsApp link -->
-      <a href="https://wa.me/919769340509?text=Hi%20I%20want%20to%20book%20an%20appointment%20with%20Snehansh" 
-         target="_blank"
-         style="display:block; text-align:center; background:#25D366; color:white; padding:12px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top:10px;">
-        Message on WhatsApp
+      <!-- ✅ WhatsApp button -->
+      <a id="whatsappLink" href="https://wa.me/919082186591?text=Hi%20I%20want%20to%20book%20an%20appointment%20with%20Snehansh" target="_blank">
+        <button type="button">Book Appointment on WhatsApp</button>
       </a>
     </form>
   </div>
 
+  <script>
+    const link = document.getElementById("whatsappLink");
+    const form = document.getElementById("appointmentForm");
+
+    form.addEventListener("input", () => {
+      const name = encodeURIComponent(document.getElementById("name").value);
+      const email = encodeURIComponent(document.getElementById("email").value);
+      const contact = encodeURIComponent(document.getElementById("contact").value);
+      const date = encodeURIComponent(document.getElementById("date").value);
+      const time = encodeURIComponent(document.getElementById("time").value);
+      const message = encodeURIComponent(document.getElementById("message").value);
+
+      const text = `*New Appointment for Snehansh*%0A👤 Name: ${name}%0A📧 Email: ${email}%0A📞 Contact: ${contact}%0A📅 Date: ${date}%0A⏰ Time: ${time}%0A💬 Message: ${message}`;
+      
+      // ✅ Updates link dynamically
+      link.href = `https://wa.me/919082186591?text=${text}`;
+    });
+  </script>
+
 </body>
-</html>
+</html>>
