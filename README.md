@@ -17,3 +17,8 @@ A simple and modern appointment booking website that allows users to directly me
 - **CSS3** – Styling and responsiveness  
 - **JavaScript (Vanilla)** – WhatsApp redirect functionality  
 - **GitHub Pages** – Free hosting
+
+---
+
+## 🌐 Live Demo
+🔗 [View Website](https://yourusername.github.io/snehansh-appointment-site/)  
